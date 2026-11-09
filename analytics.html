@@ -19,11 +19,19 @@
       <a href="upload.html">Upload</a> |
       <a href="analytics.html">Studio</a>
     </nav>
+    <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">&#127769; Dark</button>
   </header>
 
   <main>
     <h2>eTube Studio &mdash; Channel analytics</h2>
     <p>Creator: <a href="channel.html"><strong>CodeCampus</strong></a> &middot; Last 28 days</p>
+
+    <div class="stats-row">
+      <div class="stat"><span id="statTotal">-</span><small>Total views (all time)</small></div>
+      <div class="stat"><span id="statAverage">-</span><small>Average views per video</small></div>
+      <div class="stat"><span id="statTop">-</span><small>Most viewed video</small></div>
+      <div class="stat"><span id="statWatch">-</span><small>Total content length</small></div>
+    </div>
 
     <table class="analytics">
       <caption>Video performance (last 28 days)</caption>
@@ -92,5 +100,7 @@
     <p><small>&copy; 2026 eTube &middot; <a href="#top">Back to top</a></small></p>
   </footer>
 
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

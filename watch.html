@@ -19,11 +19,13 @@
       <a href="upload.html">Upload</a> |
       <a href="analytics.html">Studio</a>
     </nav>
+    <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">&#127769; Dark</button>
   </header>
 
-  <main>
+  <main class="watch-layout">
+    <div class="watch-primary">
     <!-- The video player: built into HTML5, no plugin needed -->
-    <video src="videos/html-basics.mp4" poster="images/thumbs/html-basics.jpg" width="300" controls>
+    <video id="player" onended="startAutoplay()" src="videos/html-basics.mp4" poster="images/thumbs/html-basics.jpg" width="300" controls>
       Your browser does not support the video tag.
     </video>
 
@@ -34,6 +36,20 @@
       <a href="channel.html"><strong>CodeCampus</strong></a> &middot;
       <a href="#comments">Jump to comments</a>
     </p>
+
+    <p class="actions">
+      <button id="likeBtn" class="btn" onclick="likeVideo()">&#128077; <span id="likeCount">9800</span></button>
+      <button class="btn" onclick="shareVideo()">&#8599; Share</button>
+      <button id="laterBtn" class="btn" onclick="toggleWatchLater(1)">&#9200; Watch later</button>
+      <button class="btn" onclick="showEmbedCode()">&lt;/&gt; Embed</button>
+    </p>
+
+    <div id="autoplayBox" class="notice">
+      Up next in <strong id="countdown">5</strong>s: CSS Flexbox Made Easy
+      <button class="btn" onclick="cancelAutoplay()">Cancel</button>
+    </div>
+
+    <textarea id="embedCode" class="embed-code" rows="3" readonly></textarea>
 
     <h3>Description</h3>
     <p>
@@ -64,24 +80,29 @@
       <li>#placements</li>
     </ul>
 
-    <h3>Up next</h3>
-    <ol>
-      <li><a href="index.html#video-css-flexbox">CSS Flexbox Made Easy</a></li>
-      <li><a href="index.html#video-js-basics">JavaScript for Beginners</a></li>
-      <li><a href="index.html#video-infosys-interview">Cracking the Infosys Interview</a></li>
-    </ol>
-
     <h3 id="comments">Comments (3)</h3>
     <ul class="comments">
       <li><strong>Priya_ECE</strong> <small>2 days ago</small><br>Finally understood div vs span. Thank you!</li>
       <li><strong>Ravi.codes</strong> <small>5 days ago</small><br>Chapter 05:45 was the best part.</li>
       <li><strong>Anu K</strong> <small>1 week ago</small><br>Please make a CSS video next.</li>
     </ul>
+    </div>
+
+    <aside class="watch-secondary">
+      <h3>Up next</h3>
+      <ol class="up-next">
+        <li><a href="index.html#video-css-flexbox"><img src="images/thumbs/css-flexbox.jpg" alt="" width="168">CSS Flexbox Made Easy</a><br><small>CodeCampus &middot; 845K views</small></li>
+        <li><a href="index.html#video-js-basics"><img src="images/thumbs/js-basics.jpg" alt="" width="168">JavaScript for Beginners</a><br><small>CodeCampus &middot; 2.1M views</small></li>
+        <li><a href="index.html#video-infosys-interview"><img src="images/thumbs/infosys-interview.jpg" alt="" width="168">Cracking the Infosys Interview</a><br><small>CodeCampus &middot; 530K views</small></li>
+      </ol>
+    </aside>
   </main>
 
   <footer>
     <p><small>&copy; 2026 eTube &middot; <a href="#top">Back to top</a></small></p>
   </footer>
 
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

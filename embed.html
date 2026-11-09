@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eTube embedded player</title>
+  <style>
+    body { margin: 0; background: #000; font-family: "Segoe UI", Arial, sans-serif; }
+    video { width: 100%; height: auto; display: block; }
+    .bar { color: #fff; padding: 6px 10px; font-size: 13px; }
+    .bar a { color: #4fd1c5; }
+    body.highlight { outline: 4px solid #ffcc00; outline-offset: -4px; }
+  </style>
+</head>
+<body>
+  <video src="videos/html-basics.mp4" poster="images/thumbs/html-basics.jpg" controls></video>
+  <div class="bar">
+    HTML in 10 Minutes &middot; <span id="where"></span>
+    <a href="watch.html" target="_top">Watch on eTube</a>
+  </div>
+  <script>
+    // Frame objects: am I inside another page?
+    if (window.top !== window.self) {
+      document.getElementById("where").innerText = "embedded in: " + window.parent.document.title;
+    } else {
+      document.getElementById("where").innerText = "opened directly";
+    }
+  </script>
+</body>
+</html>

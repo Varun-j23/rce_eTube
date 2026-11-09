@@ -1,229 +1,374 @@
-/*Universal Styles*/
+/* =========================================================
+   eTube - Day 2 stylesheet (CSS2)
+   One file styles all five pages.
+   ========================================================= */
+
+/* ---------- 1. Universal + page basics ---------- */
 * {
-    margin: 2px;
-    padding: 2px;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-     font-family: Arial, sans-serif;
-     font-size: 16px;
-     line-height: 1.5;
-     color: black;
-     background-color: lightgray;
+body {
+  font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;  /* font stack */
+  font-size: 15px;
+  line-height: 1.6;
+  color: #0f0f0f;                 /* near-black text, like video sites */
+  background-color: #ffffff;
 }
 
-main{
-    padding: 16px 24px;
+main {
+  padding: 16px 24px;
 }
 
-/*Header Styles and Navigation*/
-
+/* ---------- 2. Header and navigation ---------- */
 header {
-    background-color: #f2f2f2;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 8px 24px;
 }
 
 header img {
-    height: 40px;
-    margin-right: 16px;
+  vertical-align: middle;
 }
 
 header h1 {
-  display: inline-block;
+  display: inline;
+  font-size: 22px;
+  letter-spacing: -1px;
   vertical-align: middle;
-  letter-spacing: 2px;
-  margin-left: 10px;
-  color: red;
-  font-size: 25px;
-  }
+  margin-left: 4px;
+}
 
-  nav{    
-    display: inline;
-    margin-left: 32px;
-    color: #cccccc;
-  }
+nav {
+  display: inline;
+  margin-left: 32px;
+  color: #cccccc;                 /* colours the | separators */
+}
 
-  nav a {
-    text-decoration: none;
-    font-weight: bold;
-    padding: 6px 8px;
-    color: red;
-    margin-right: 8px;
-  }
+nav a,
+nav a:link,
+nav a:visited {                   /* beats a:link (more specific) */
+  color: #0f0f0f;
+  text-decoration: none;          /* remove underline */
+  font-weight: bold;
+  padding: 6px 12px;
+}
 
-  nav a:hover {
-    background-color: yellow;
-    color: green;    
-  }
+nav a:hover {
+  background-color: #f2f2f2;
+}
 
-  /* Headings and text basics */
-  h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
+/* ---------- 3. Headings and text ---------- */
+h2 {
+  font-size: 22px;
+  margin: 16px 0 8px 0;
+}
 
-  h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
+h3 {
+  font-size: 17px;
+  margin: 16px 0 6px 0;
+}
 
-  p{
-    margin-bottom: 8px;
-  }
+p {
+  margin-bottom: 8px;
+}
 
-  ul,ol {
-    margin-left: 34px;
-  }
+ul, ol {
+  margin-left: 24px;              /* the * reset removed list indents */
+}
 
-  /* Video and Thumbnail Styles */
-  .video-card{
-    margin-bottom: 24px;
-  }
+/* ---------- 4. Links (LoVe HAte order) ---------- */
+a:link    { color: #065fd4; }
+a:visited { color: #065fd4; }
+a:hover   { color: #0f9d8a; }
+a:active  { color: #0f0f0f; }
 
-  .video-card img {
-    cursor: pointer;
-  }
+/* External links get a subtle colour (attribute selector) */
+a[target="_blank"] {
+  color: #0f9d8a;
+}
 
-  .video-card .channel {
-    color: red;
-    font-weight: bold;
-    padding-right: 8px;
-  }
+/* ---------- 5. Video cards (home page) ---------- */
+.video-card {
+  margin-bottom: 24px;
+}
 
-  .video-card .views {
-    color: blue;
-  }
+.video-card img {
+  cursor: pointer;                /* thumbnails are clickable */
+}
 
-  .video-card h3 a:hover {
-    text-decoration: underline;
-  }
+.video-card h3 {
+  font-size: 16px;
+  margin: 6px 0 2px 0;
+}
 
-  .video-card p {
-    margin: 0;
-    font-size: 14px;
-    color: #606060;
-  }
+.video-card h3 a {
+  color: #0f0f0f;
+  text-decoration: none;
+}
 
-  .video-card .views::before {
-    content:"\25B6  ";
-    font-size: 12px;
-  }
+.video-card h3 a:hover {
+  text-decoration: underline;
+}
 
-  .channel-video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
+.video-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #606060;                 /* grey meta text */
+}
 
-  .channel-video-card {
-    min-width: 0;
-    margin-bottom: 16px;
-  }
+.video-card .channel {
+  font-weight: bold;
+}
 
-  .channel-video-card img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 8px;
-  }
+.video-card .duration {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px 4px;
+}
 
-  .channel-video-card h4 {
-    margin: 8px 0 4px;
-  }
+.video-card .views:before {
+  content: "\25B6  ";             /* small play symbol before views */
+  font-size: 10px;
+}
 
-  .channel-video-card h4 a {
-    color: inherit;
-    text-decoration: none;
-  }
+/* ---------- 6. Lists ---------- */
+ul.categories {
+  list-style: none;
+  margin-left: 0;
+}
 
-  .channel-video-card p {
-    color: #606060;
-    font-size: 14px;
-  }
+ul.categories li {
+  display: inline;
+  background-color: #f2f2f2;
+  padding: 6px 12px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  .like-btn {
-    padding: 6px 12px;
-    border: 1px solid #999;
-    border-radius: 18px;
-    background-color: #f2f2f2;
-    color: #222;
-    cursor: pointer;
-  }
+ul.categories li:hover {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
 
-  .like-btn[aria-pressed="true"] {
-    background-color: #e8e8e8;
-    font-weight: bold;
-  }
+ul.tags {
+  list-style: none;
+  margin-left: 0;
+}
 
-    ul.categories {
-      list-style-type: none;
-      margin-left: 0;
-    }
+ul.tags li {
+  display: inline;
+  color: #065fd4;
+  margin-right: 8px;
+}
 
-  ul.categories li {
-    display: inline-block;
-    margin-right: 12px;
-    padding: 6px 12px;
-    background-color: #f2f2f2;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+ol.playlist {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  margin-left: 0;
+}
 
-  ul.categories li:hover {
-    background-color: #e0e0e0;
-    color:#ffffff
-  }
+ol.playlist ul {
+  list-style-type: square;
+  margin-left: 32px;
+}
 
-  .channel-info h2{
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  .subscribers, .video-count {
-    font-size: 14px;
-    color: #3a1e1e;
-  }
+ul.comments {
+  list-style: none;
+  margin-left: 0;
+}
 
-  .subscribe-btn {
-    display: inline-block;
-    margin-left: 16px;
-    padding: 6px 12px;
-    background-color: red;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+ul.comments li {
+  border-bottom: 1px solid #eeeeee;
+  padding: 8px 0;
+}
 
-  /* ===================================================================
-     Day 3 - Box Model and Layout
-      =================================================================== */
-    * {
-        box-sizing: border-box;
-    }
+ul.comments small {
+  color: #606060;
+}
 
-    /* ------------- Fixed top bar ------------- */
-    header {
-      
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 56px;
-        z-index: 1000;
-    }
+/* ---------- 7. Watch page ---------- */
+video {
+  background-color: #000000;
+}
 
-    body{
-      padding-top: 56px; /* Add padding to avoid content being hidden behind the fixed header */
-    }
+.video-title {
+  font-size: 20px;
+}
 
-    [id]{
-      scroll-margin-top: 70px; /* Add scroll margin to avoid content being hidden behind the fixed header when using anchor links */
-    }
+pre.chapters {
+  background-color: #f2f2f2;
+  padding: 12px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+}
 
+mark {
+  background-color: #fff3b0;
+}
+
+/* ---------- 8. Channel page ---------- */
+.channel-info h2 {
+  margin-top: 8px;
+}
+
+.subscribers {
+  color: #606060;
+}
+
+.subscribe-btn {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 6px 16px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background-color: #272727;
+}
+
+dl dt {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+dl dd {
+  margin-left: 16px;
+  color: #606060;
+}
+
+/* ---------- 9. Upload page ---------- */
+.btn-disabled {
+  background-color: #e5e5e5;
+  color: #909090;
+  padding: 8px 16px;
+  cursor: not-allowed;            /* tells the user: not yet */
+}
+
+/* ---------- 10. Tables (Studio analytics) ---------- */
+table {
+  border-collapse: collapse;      /* single lines, not double */
+  width: 100%;
+  margin: 12px 0 24px 0;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+th, td {
+  border: 1px solid #e5e5e5;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #0f9d8a;      /* eTube teal */
+  color: #ffffff;
+}
+
+table.analytics td {
+  text-align: right;              /* numbers line up on the right */
+}
+
+table.analytics td:first-child {
+  text-align: left;
+}
+
+table.analytics tbody tr:hover {
+  background-color: #e8f6f3;      /* row highlight */
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+table.schedule td {
+  text-align: center;
+}
+
+/* ---------- 11. Footer ---------- */
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px 24px;
+  color: #606060;
+}
+
+/* ---------- 12. Table Videos page (cards inside a table) ---------- */
+/* Replaces the old HTML attributes border="1" cellpadding="10" cellspacing="0" */
+table.video-table {
+  border-collapse: separate;
+  border-spacing: 16px;           /* gap between cells (was cellspacing) */
+  width: 100%;
+}
+
+table.video-table img {
+  width: 100%;                    /* thumbnail shrinks to fit its cell */
+  height: auto;
+}
+
+table.video-table td {
+  border: 1px solid #e5e5e5;      /* was border="1" */
+  padding: 12px;                  /* was cellpadding="10" */
+  width: 33%;
+  vertical-align: top;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+table.video-table td:hover {
+  background-color: #f9f9f9;
+  border-color: #0f9d8a;
+}
+
+table.video-table caption {
+  font-size: 20px;
+}
+
+/* ---------- 13. Embedded video (iframe) ---------- */
+iframe {
+  display: block;
+  margin-top: 16px;
+  border: 0;
+}
+
+/* =========================================================
+   Day 3 - Box model and layout
+   ========================================================= */
+
+/* ---------- 14. Box sizing: width includes padding + border ---------- */
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- 15. Fixed top bar ---------- */
+header {
+  position: fixed;                /* stays on screen while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  z-index: 10;                    /* above the page content */
+}
+
+body {
+  padding-top: 56px;              /* so content does not hide under the bar */
+}
+
+[id] {
+  scroll-margin-top: 70px;        /* anchor jumps land below the bar (CSS3) */
+}
 
 /* ---------- 16. Sidebar (home page) ---------- */
 .sidebar {
@@ -233,20 +378,20 @@ header h1 {
   left: 0;
   width: 200px;
   padding: 12px;
-  background-color: #c15151;
-  border-right: 1px solid #1f0a5e;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
 }
 
 .sidebar a {
   display: block;                 /* full-width clickable rows */
   padding: 10px 12px;
-  color: #eae1e1;
+  color: #0f0f0f;
   font-weight: bold;
   text-decoration: none;
 }
 
 .sidebar a:hover {
-  background-color: #3516cf;
+  background-color: #f2f2f2;
 }
 
 body.home main,
@@ -254,31 +399,373 @@ body.home footer {
   margin-left: 200px;             /* make room for the sidebar */
 }
 
+/* ---------- 17. Video grid: 3 cards per row ---------- */
+.video-card {
+  display: inline-block;          /* sit side by side, keep width */
+  vertical-align: top;
+  width: 30%;                     /* 3 x (30% + 2% margin) = 96%, leaves room
+                                     for the spaces between inline-blocks */
+  margin: 0 1% 24px 1%;
+}
+
+.thumb {
+  position: relative;             /* reference box for the badges */
+}
+
+.thumb img {
+  display: block;                 /* removes the gap under images */
+  width: 100%;
+  height: auto;
+}
+
+.thumb .duration {
+  position: absolute;             /* placed on top of the thumbnail */
+  right: 8px;
+  bottom: 8px;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px 4px;
+}
+
+.badge-new {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #cc0000;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+
+/* Chips: inline boxes ignore vertical spacing and break mid-word,
+   inline-block boxes behave like small blocks inside a line */
+ul.categories li {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* The table page keeps its own layout: cards fill their cells */
+table.video-table .video-card {
+  display: block;
+  width: auto;
+  margin: 0;
+}
+
+/* ---------- 18. Channel header: float the avatar ---------- */
+.channel-info {
+  margin-top: 16px;
+}
+
+.channel-info img {
+  float: left;                    /* text wraps on the right */
+  margin-right: 16px;
+}
+
+.channel-info:after {             /* clearfix: parent wraps the float */
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---------- 19. Watch page: two columns ---------- */
+.watch-primary {
+  float: left;
+  width: 66%;
+}
+
+.watch-secondary {
+  float: right;
+  width: 31%;
+}
+
+.watch-layout:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+video,
+iframe {
+  width: 100%;
+}
+
+video {
+  height: auto;
+}
+
+iframe {
+  height: 360px;
+}
+
+ol.up-next {
+  list-style: none;
+  margin-left: 0;
+}
+
+ol.up-next li {
+  overflow: hidden;               /* contains the floated thumbnail */
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+ol.up-next a {
+  color: #0f0f0f;
+  text-decoration: none;
+}
+
+ol.up-next img {
+  float: left;
+  width: 168px;
+  margin-right: 8px;
+}
+
+ol.up-next small {
+  font-weight: normal;
+  color: #606060;
+}
+
+/* =========================================================
+   Day 4 - Buttons, flexbox grid, responsive design, dark mode
+   ========================================================= */
+
+/* ---------- 20. Buttons ---------- */
+.btn,
+.theme-btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  color: #0f0f0f;
+  border: 0;
+  border-radius: 18px;            /* pill shape (CSS3) */
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.theme-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.btn.active {
+  background-color: #0f0f0f;      /* liked state */
+  color: #ffffff;
+}
+
+.theme-btn {
+  float: right;
+  margin-top: 4px;
+}
+
+.subscribe-btn.subscribed {
+  background-color: #f2f2f2;
+  color: #0f0f0f;
+}
+
+/* ---------- 21. Flexbox video grid (replaces inline-block) ---------- */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;                /* move to the next line when full */
+  gap: 16px;                      /* space between cards, no maths */
+}
+
+.video-grid .video-card {
+  display: block;
+  margin: 0;
+  width: calc(33.333% - 11px);    /* 3 per row: 3 cards + 2 gaps of 16px */
+}
+
+/* ---------- 22. Responsive: tablets and small laptops ---------- */
+@media (max-width: 1100px) {
+  .video-grid .video-card {
+    width: calc(50% - 8px);       /* 2 per row */
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;                /* no room for the sidebar */
+  }
+
+  body.home main,
+  body.home footer {
+    margin-left: 0;
+  }
+
+  .watch-primary,
+  .watch-secondary {
+    float: none;                  /* stack the two columns */
+    width: 100%;
+  }
+
+  iframe {
+    height: 240px;
+  }
+}
+
+/* ---------- 23. Responsive: phones ---------- */
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    padding: 8px 12px;
+  }
+
+  nav {
+    display: block;
+    margin: 6px 0 0 0;
+    white-space: nowrap;
+    overflow-x: auto;             /* swipe the menu sideways */
+  }
+
+  nav a {
+    padding: 6px 8px;
+  }
+
+  .theme-btn {
+    float: none;
+    position: absolute;           /* top-right corner of the fixed header */
+    top: 10px;
+    right: 12px;
+  }
+
+  body {
+    padding-top: 92px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  .video-grid .video-card {
+    width: 100%;                  /* 1 per row */
+  }
+
+  table.video-table td {
+    display: block;               /* table cells stack on a phone */
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+}
+
+/* ---------- 24. Dark mode ---------- */
 body.dark {
-  color: #f2f2f2;
-  background-color: #181818;
+  background-color: #0f0f0f;
+  color: #f1f1f1;
 }
 
 body.dark header,
-body.dark ul.categories li {
-  background-color: #282828;
-}
-
-body.dark nav,
-body.dark nav a,
-body.dark a,
-body.dark .video-card p,
-body.dark .subscribers,
-body.dark .video-count {
-  color: #e0e0e0;
-}
-
 body.dark .sidebar {
-  background-color: #202020;
-  border-right-color: #444;
+  background-color: #0f0f0f;
+  border-color: #303030;
 }
 
-body.dark ul.categories li:hover {
-  background-color: #444;
-  color: #fff;
+body.dark nav a,
+body.dark nav a:link,
+body.dark nav a:visited,
+body.dark .sidebar a,
+body.dark .video-card h3 a,
+body.dark ol.up-next a {
+  color: #f1f1f1;
+}
+
+body.dark .sidebar a:hover,
+body.dark nav a:hover {
+  background-color: #272727;
+}
+
+body.dark .video-card p,
+body.dark ol.up-next small,
+body.dark .subscribers,
+body.dark dl dd,
+body.dark footer {
+  color: #aaaaaa;
+}
+
+body.dark pre.chapters,
+body.dark ul.categories li,
+body.dark .btn,
+body.dark .theme-btn,
+body.dark table.video-table td,
+body.dark tfoot td {
+  background-color: #272727;
+  color: #f1f1f1;
+}
+
+body.dark th,
+body.dark td {
+  border-color: #303030;
+}
+
+body.dark .subscribe-btn {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+}
+
+/* =========================================================
+   Day 5 - Notices, embed code, studio stats, channel player
+   ========================================================= */
+
+/* ---------- 25. Autoplay notice and embed box ---------- */
+.notice {
+  display: none;                  /* JavaScript shows it */
+  background-color: #e8f6f3;
+  border-left: 4px solid #0f9d8a;
+  padding: 10px 14px;
+  margin: 8px 0;
+}
+
+.embed-code {
+  display: none;                  /* JavaScript shows it */
+  width: 100%;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+/* ---------- 26. Studio statistics cards ---------- */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.stat {
+  flex: 1 1 180px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.stat span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0f9d8a;
+}
+
+.stat small {
+  color: #606060;
+}
+
+/* ---------- 27. Embedded player on the channel page ---------- */
+iframe.channel-player {
+  width: 480px;
+  max-width: 100%;
+  height: 300px;
+  border: 1px solid #e5e5e5;
+}
+
+body.dark .notice,
+body.dark .stat {
+  background-color: #1f1f1f;
+  border-color: #303030;
 }

@@ -20,9 +20,10 @@
       <a href="upload.html">Upload</a> |
       <a href="analytics.html">Studio</a>
     </nav>
-    <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">&#127769;Dark</button>
+    <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">&#127769; Dark</button>
   </header>
-<!-- Left sidebar (home page only) -->
+
+  <!-- Left sidebar (home page only) -->
   <aside class="sidebar">
     <a href="index.html">Home</a>
     <a href="index.html#trending">Trending</a>
@@ -31,13 +32,15 @@
     <a href="upload.html">Upload</a>
     <a href="analytics.html">Studio</a>
   </aside>
+
   <main>
     <section>
-      <h2>Learn. Code. Get placed.</h2>
+      <h2 id="greeting">Learn. Code. Get placed.</h2>
       <p>
         eTube is a <strong>video-sharing platform</strong> for engineering students.
         Watch short, <em>practical</em> coding videos made by students and trainers.
       </p>
+      <button class="btn" onclick="personalise()">Personalise my feed</button>
     </section>
 
     <h3>Browse by category</h3>
@@ -51,46 +54,67 @@
     <section id="trending">
       <h2>Trending this week</h2>
 
+      <div class="video-grid">
       <div class="video-card" id="video-html-basics">
-        <a href="watch.html"><img src="images/thumbs/html-basics.jpg" alt="Thumbnail: HTML in 10 Minutes" width="320"></a>
+        <div class="thumb">
+          <a href="watch.html"><img src="images/thumbs/html-basics.jpg" alt="Thumbnail: HTML in 10 Minutes" width="320"></a>
+          <span class="duration">10:24</span>
+        </div>
         <h3><a href="watch.html">HTML in 10 Minutes</a></h3>
         <p><span class="channel">CodeCampus</span></p>
-        <p><span class="views">1.2M views</span> &middot; <span class="age">2 weeks ago</span> &middot; <span class="duration">10:24</span></p>
+        <p><span class="views">1.2M views</span> &middot; <span class="age">2 weeks ago</span></p>
       </div>
 
       <div class="video-card" id="video-css-flexbox">
-        <a href="watch.html"><img src="images/thumbs/css-flexbox.jpg" alt="Thumbnail: CSS Flexbox Made Easy" width="320"></a>
+        <div class="thumb">
+          <a href="watch.html"><img src="images/thumbs/css-flexbox.jpg" alt="Thumbnail: CSS Flexbox Made Easy" width="320"></a>
+          <span class="duration">14:02</span>
+        </div>
         <h3><a href="watch.html">CSS Flexbox Made Easy</a></h3>
         <p><span class="channel">CodeCampus</span></p>
-        <p><span class="views">845K views</span> &middot; <span class="age">1 month ago</span> &middot; <span class="duration">14:02</span></p>
+        <p><span class="views">845K views</span> &middot; <span class="age">1 month ago</span></p>
       </div>
 
       <div class="video-card" id="video-js-basics">
-        <a href="watch.html"><img src="images/thumbs/js-basics.jpg" alt="Thumbnail: JavaScript for Beginners" width="320"></a>
+        <div class="thumb">
+          <a href="watch.html"><img src="images/thumbs/js-basics.jpg" alt="Thumbnail: JavaScript for Beginners" width="320"></a>
+          <span class="duration">22:45</span>
+        </div>
         <h3><a href="watch.html">JavaScript for Beginners</a></h3>
         <p><span class="channel">CodeCampus</span></p>
-        <p><span class="views">2.1M views</span> &middot; <span class="age">3 months ago</span> &middot; <span class="duration">22:45</span></p>
+        <p><span class="views">2.1M views</span> &middot; <span class="age">3 months ago</span></p>
       </div>
 
       <div class="video-card" id="video-infosys-interview">
-        <a href="watch.html"><img src="images/thumbs/infosys-interview.jpg" alt="Thumbnail: Cracking the Infosys Interview" width="320"></a>
+        <div class="thumb">
+          <a href="watch.html"><img src="images/thumbs/infosys-interview.jpg" alt="Thumbnail: Cracking the Infosys Interview" width="320"></a>
+          <span class="duration">18:30</span>
+          <span class="badge-new">NEW</span>
+        </div>
         <h3><a href="watch.html">Cracking the Infosys Interview</a></h3>
         <p><span class="channel">CodeCampus</span></p>
-        <p><span class="views">530K views</span> &middot; <span class="age">5 days ago</span> &middot; <span class="duration">18:30</span></p>
+        <p><span class="views">530K views</span> &middot; <span class="age">5 days ago</span></p>
       </div>
 
       <div class="video-card" id="video-git-github">
-        <a href="watch.html"><img src="images/thumbs/git-github.jpg" alt="Thumbnail: Git and GitHub in 15 Minutes" width="320"></a>
+        <div class="thumb">
+          <a href="watch.html"><img src="images/thumbs/git-github.jpg" alt="Thumbnail: Git and GitHub in 15 Minutes" width="320"></a>
+          <span class="duration">15:11</span>
+        </div>
         <h3><a href="watch.html">Git &amp; GitHub in 15 Minutes</a></h3>
         <p><span class="channel">CodeCampus</span></p>
-        <p><span class="views">312K views</span> &middot; <span class="age">2 months ago</span> &middot; <span class="duration">15:11</span></p>
+        <p><span class="views">312K views</span> &middot; <span class="age">2 months ago</span></p>
       </div>
 
       <div class="video-card" id="video-dsa-arrays">
-        <a href="watch.html"><img src="images/thumbs/dsa-arrays.jpg" alt="Thumbnail: DSA Arrays Explained" width="320"></a>
+        <div class="thumb">
+          <a href="watch.html"><img src="images/thumbs/dsa-arrays.jpg" alt="Thumbnail: DSA Arrays Explained" width="320"></a>
+          <span class="duration">12:08</span>
+        </div>
         <h3><a href="watch.html">DSA: Arrays Explained</a></h3>
         <p><span class="channel">CodeCampus</span></p>
-        <p><span class="views">678K views</span> &middot; <span class="age">3 weeks ago</span> &middot; <span class="duration">12:08</span></p>
+        <p><span class="views">678K views</span> &middot; <span class="age">3 weeks ago</span></p>
+      </div>
       </div>
     </section>
 
@@ -112,6 +136,8 @@
       </small>
     </p>
   </footer>
-<script src="js/app.js"></script>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

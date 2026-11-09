@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eTube | Table Videos</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
 
@@ -16,15 +17,17 @@
       <a href="index.html#trending">Trending</a> |
       <a href="table-videos.html">Table Videos</a> |
       <a href="channel.html">Channel</a> |
-      <a href="upload.html">Upload</a>
+      <a href="upload.html">Upload</a> |
+      <a href="analytics.html">Studio</a>
     </nav>
+    <button id="themeBtn" class="theme-btn" onclick="toggleTheme()">&#127769; Dark</button>
   </header>
 
   <main>
     <h2>All videos</h2>
     <p>The same trending videos, laid out as a <strong>table</strong> of video cards.</p>
 
-    <table class="video-table"
+    <table class="video-table">
       <caption>Trending this week</caption>
       <tr>
         <td>
@@ -90,5 +93,7 @@
     </p>
   </footer>
 
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
