@@ -68,6 +68,8 @@ function toggleSubscribe() {
     subscribed = true;
     btn.innerText = "Subscribed ✓";
     btn.classList.add("subscribed");
+    
+    
   } else {
     let sure = confirm("Unsubscribe from CodeCampus?");
     if (sure) {
